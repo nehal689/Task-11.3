@@ -1,0 +1,21 @@
+ - hosts: all
+   tasks:
+    - name: "Install httpd"
+      package:
+       name: "httpd"
+       state: present
+
+
+    - name: "Create File"
+      copy:
+       dest: "/var/www/html/index.html"
+       content: "<br> <h2> This is created by ansible Succesfully completed Task11.3  </h2> <br>"
+
+
+    - name: "Start Services"
+      service:
+       name: "httpd"
+       state: started
+       enabled: yes
+~
+~
